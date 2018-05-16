@@ -61,8 +61,8 @@ end
     parameter = entry.keys[0].to_s
     value = entry.values[0].to_s
 
-    sql = "SELECT * FROM #{self.table_name} WHERE ? = ? "
-    DB[:conn].execute(sql, parameter, value)
+    sql = "SELECT * FROM #{self.table_name} WHERE #{parameter} = ? "
+    DB[:conn].execute(sql, value)
    end 
   
 end
